@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours de certification - Alyssia Noireau</title>
 
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --primary: #0f172a;
+      --secondary: #2563eb;
+      --text: #334155;
+      --muted: #64748b;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .slide {
+      min-height: 100vh;
+      padding: 70px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cover {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      text-align: center;
+    }
+
+    .cover h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+
+    .cover h2 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    .cover p {
+      font-size: 22px;
+      color: #dbeafe;
+    }
+
+    h2 {
+      font-size: 42px;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 26px;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 21px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      margin-top: 20px;
+      padding-left: 28px;
+    }
+
+    li {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    @media print {
+      .slide {
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="slide cover">
+    <h1>Parcours de certification</h1>
+    <h2>BTS SIO option SISR</h2>
+    <p>Alyssia Noireau</p>
+    <p>Projet professionnel : Licence Chef de Projet en alternance</p>
+  </section>
+
+  <section class="slide">
+    <h2>Présentation de mon parcours</h2>
+    <p>
+      Je suis actuellement en <span class="highlight">BTS SIO option SISR</span>,
+      une formation orientée vers l’administration des systèmes, des réseaux
+      et la cybersécurité.
+    </p>
+    <p>
+      Dans le cadre de mon parcours, j’ai choisi de passer plusieurs certifications
+      afin de renforcer mes compétences techniques et de valoriser mon profil.
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Certifications obtenues</h2>
+
+    <div class="grid">
+      <div class="card"><span class="tag">Réseau</span><h3>CCNA 1</h3><p>Fondamentaux des réseaux informatiques.</p></div>
+      <div class="card"><span class="tag">Réseau</span><h3>CCNA 2</h3><p>Routage, commutation et dépannage réseau.</p></div>
+      <div class="card"><span class="tag">Réseau</span><h3>CCNA 3</h3><p>Architecture réseau avancée et sécurité.</p></div>
+      <div class="card"><span class="tag">Système</span><h3>Linux</h3><p>Administration système et ligne de commande.</p></div>
+      <div class="card"><span class="tag">Méthode</span><h3>DevOps</h3><p>Automatisation, collaboration et déploiement.</p></div>
+      <div class="card"><span class="tag">Données</span><h3>CNIL</h3><p>Protection des données personnelles et RGPD.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Ce que les certifications CCNA m’ont appris</h2>
+    <ul>
+      <li>Comprendre le fonctionnement d’un réseau informatique.</li>
+      <li>Identifier les rôles des routeurs, switches, VLAN et protocoles réseau.</li>
+      <li>Configurer et dépanner une infrastructure réseau.</li>
+      <li>Développer une méthode d’analyse face aux incidents techniques.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Ce que la certification Linux m’a apporté</h2>
+    <ul>
+      <li>Administrer un système d’exploitation Linux.</li>
+      <li>Gérer les utilisateurs, les droits et les permissions.</li>
+      <li>Utiliser le terminal pour exécuter des commandes efficacement.</li>
+      <li>Comprendre l’importance de Linux dans les serveurs et l’infrastructure IT.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Ce que la certification DevOps m’a apporté</h2>
+    <ul>
+      <li>Comprendre le lien entre développement et exploitation informatique.</li>
+      <li>Découvrir l’automatisation et l’intégration continue.</li>
+      <li>Comprendre l’importance du travail collaboratif dans les projets IT.</li>
+      <li>Développer une vision plus globale du cycle de vie d’un projet informatique.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Ce que la certification CNIL m’a appris</h2>
+    <ul>
+      <li>Comprendre les principes du RGPD.</li>
+      <li>Identifier les bonnes pratiques liées aux données personnelles.</li>
+      <li>Prendre conscience des responsabilités légales d’une organisation.</li>
+      <li>Intégrer la protection des données dans les projets informatiques.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Compétences développées</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Compétences techniques</h3>
+        <p>Réseaux, systèmes, Linux, sécurité, conformité et outils DevOps.</p>
+      </div>
+
+      <div class="card">
+        <h3>Compétences professionnelles</h3>
+        <p>Autonomie, rigueur, méthode, résolution de problèmes et organisation.</p>
+      </div>
+
+      <div class="card">
+        <h3>Vision projet</h3>
+        <p>Compréhension des besoins techniques, respect des contraintes et travail en équipe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Mon projet professionnel</h2>
+    <p>
+      L’année prochaine, je souhaite intégrer une
+      <span class="highlight">Licence Chef de Projet en alternance</span>.
+    </p>
+    <p>
+      Mon objectif est de continuer à développer mes compétences techniques,
+      tout en acquérant des compétences en gestion de projet, communication,
+      organisation et coordination d’équipe.
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Pourquoi ces certifications vont m’aider ?</h2>
+    <ul>
+      <li>Elles prouvent mon sérieux et ma motivation dans mon parcours informatique.</li>
+      <li>Elles renforcent ma crédibilité auprès des écoles et des entreprises.</li>
+      <li>Elles me permettent de mieux comprendre les contraintes techniques d’un projet.</li>
+      <li>Elles constituent une base solide pour évoluer vers un rôle de cheffe de projet.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Conclusion</h2>
+    <p>
+      Ces certifications m’ont permis de consolider mes acquis en BTS SIO SISR
+      et de mieux préparer la suite de mon parcours.
+    </p>
+    <p>
+      Elles représentent un véritable atout pour mon projet professionnel :
+      poursuivre en licence Chef de Projet en alternance et évoluer dans le domaine
+      de l’informatique.
+    </p>
+
+    <p class="footer">Alyssia Noireau — BTS SIO SISR</p>
+  </section>
+
+</body>
+</html>
