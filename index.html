@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -123,7 +122,7 @@
 
     p,
     li {
-      font-size: 21px;
+      font-size: 20px;
       margin-bottom: 14px;
     }
 
@@ -254,6 +253,7 @@
     .badge-link {
       display: inline-block;
       margin-top: 25px;
+      margin-right: 12px;
       padding: 12px 20px;
       border-radius: 999px;
       background: var(--secondary);
@@ -261,6 +261,12 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+    }
+
+    .badge-link.disabled {
+      background: #94a3b8;
+      pointer-events: none;
+      cursor: not-allowed;
     }
 
     .footer {
@@ -286,196 +292,177 @@
     <h2>Présentation de mon parcours</h2>
 
     <div class="timeline">
-
       <div class="timeline-item">
         <div class="year">2023 - 2024</div>
         <h3>Bac STMG</h3>
         <p>Option mercatique</p>
+        <p>Cette formation m’a permis de découvrir le fonctionnement des organisations, le marketing, la communication commerciale et l’analyse des besoins des clients.</p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2024 - 2026</div>
         <h3>BTS SIO</h3>
         <p>Option SISR : solutions d’infrastructure, systèmes et réseaux</p>
+        <p>Ce BTS me forme à l’administration des réseaux, des systèmes, à la cybersécurité et à la gestion d’infrastructures informatiques en entreprise.</p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2026 - 2027</div>
         <h3>Licence Chef de Projet</h3>
         <p>Spécialisation sécurité, exploitation et développement</p>
+        <p>Cette licence me permettra de développer des compétences en gestion de projet, en coordination d’équipe et en pilotage de solutions informatiques.</p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2027 - 2029</div>
         <h3>Master MIAGE</h3>
         <p>Management des systèmes d’information et gestion de projet informatique</p>
+        <p>Ce master représente mon objectif à long terme afin d’évoluer vers des postes de responsabilité dans les systèmes d’information.</p>
       </div>
-
     </div>
   </section>
 
   <section class="slide" id="certifications">
-
     <h2>Certifications obtenues</h2>
 
     <div class="grid">
-
       <a class="cert-card" href="#ccna1">
         <div class="cert-icon">🌐</div>
         <span class="tag">Réseau</span>
         <h3>CCNA 1</h3>
-        <p>Fondamentaux réseau, adressage IP et communication entre équipements.</p>
+        <p>Fondamentaux réseau, adressage IP, modèles OSI/TCP-IP et communication entre équipements.</p>
       </a>
 
       <a class="cert-card" href="#ccna2">
         <div class="cert-icon">🖧</div>
         <span class="tag">Infrastructure</span>
         <h3>CCNA 2</h3>
-        <p>Routage, commutation, VLAN et dépannage d’une infrastructure réseau.</p>
+        <p>Routage, commutation, VLAN, services réseau et dépannage d’une infrastructure.</p>
       </a>
 
       <a class="cert-card" href="#ccna3">
         <div class="cert-icon">🔐</div>
         <span class="tag">Réseau avancé</span>
         <h3>CCNA 3</h3>
-        <p>Sécurité, disponibilité et architecture réseau professionnelle.</p>
+        <p>Architecture réseau avancée, sécurité, haute disponibilité et analyse des performances.</p>
       </a>
 
       <a class="cert-card" href="#linux">
         <div class="cert-icon">🐧</div>
         <span class="tag">Système</span>
         <h3>Linux</h3>
-        <p>Administration système et gestion des services Linux.</p>
+        <p>Administration système, commandes, droits, utilisateurs, processus et services Linux.</p>
       </a>
 
       <a class="cert-card" href="#devops">
         <div class="cert-icon">⚙️</div>
         <span class="tag">DevOps</span>
         <h3>DevOps</h3>
-        <p>Automatisation, collaboration et déploiement d’applications.</p>
+        <p>Automatisation, collaboration, intégration continue et déploiement d’applications.</p>
       </a>
 
       <a class="cert-card" href="#cnil">
         <div class="cert-icon">🛡️</div>
         <span class="tag">RGPD</span>
         <h3>CNIL</h3>
-        <p>Protection des données personnelles et conformité numérique.</p>
+        <p>Protection des données personnelles, conformité RGPD et bonnes pratiques numériques.</p>
       </a>
-
     </div>
   </section>
 
   <section class="slide" id="ccna1">
     <a href="#certifications" class="back">← Retour aux certifications</a>
-
     <div class="detail-box">
       <h2>CCNA 1</h2>
-
       <ul>
-        <li>Comprendre les bases d’un réseau informatique.</li>
-        <li>Identifier les équipements réseau et leurs rôles.</li>
-        <li>Comprendre l’adressage IP et les protocoles réseau.</li>
-        <li>Développer une première méthode d’analyse réseau.</li>
+        <li>Apprentissage des bases du réseau informatique.</li>
+        <li>Compréhension des modèles OSI et TCP/IP.</li>
+        <li>Étude de l’adressage IPv4, des masques et des sous-réseaux.</li>
+        <li>Découverte du rôle des équipements réseau comme les switchs et routeurs.</li>
+        <li>Cette certification m’a donné les bases nécessaires pour comprendre une infrastructure réseau.</li>
       </ul>
 
-      <a class="badge-link" href="TON-LIEN-CCNA1" target="_blank">
-        Ouvrir le badge de certification
-      </a>
+      <a class="badge-link" href="ccna1.pdf" target="_blank">Ouvrir le PDF CCNA 1</a>
     </div>
   </section>
 
   <section class="slide" id="ccna2">
     <a href="#certifications" class="back">← Retour aux certifications</a>
-
     <div class="detail-box">
       <h2>CCNA 2</h2>
-
       <ul>
-        <li>Configurer des routeurs et commutateurs.</li>
-        <li>Mettre en place des VLAN et du routage.</li>
-        <li>Comprendre le fonctionnement des infrastructures réseau.</li>
-        <li>Développer des compétences en dépannage réseau.</li>
+        <li>Configuration de routeurs et de commutateurs.</li>
+        <li>Mise en place des VLAN et du routage inter-VLAN.</li>
+        <li>Compréhension des services réseau comme DHCP, NAT et DNS.</li>
+        <li>Développement de méthodes de dépannage réseau.</li>
+        <li>Cette certification m’a permis de passer de la théorie à une configuration plus concrète.</li>
       </ul>
 
-      <a class="badge-link" href="TON-LIEN-CCNA2" target="_blank">
-        Ouvrir le badge de certification
-      </a>
+      <a class="badge-link" href="ccna2.pdf" target="_blank">Ouvrir le PDF CCNA 2</a>
     </div>
   </section>
 
   <section class="slide" id="ccna3">
     <a href="#certifications" class="back">← Retour aux certifications</a>
-
     <div class="detail-box">
       <h2>CCNA 3</h2>
-
       <ul>
-        <li>Comprendre les architectures réseau avancées.</li>
-        <li>Travailler sur la sécurité et la disponibilité réseau.</li>
-        <li>Analyser les performances d’un réseau.</li>
-        <li>Découvrir des situations proches du monde professionnel.</li>
+        <li>Étude des architectures réseau avancées.</li>
+        <li>Approfondissement de la sécurité réseau.</li>
+        <li>Compréhension de la haute disponibilité et de la performance.</li>
+        <li>Analyse et résolution de problèmes dans des environnements plus complexes.</li>
+        <li>Cette certification m’a aidée à mieux comprendre les besoins d’une infrastructure professionnelle.</li>
       </ul>
 
-      <a class="badge-link" href="TON-LIEN-CCNA3" target="_blank">
-        Ouvrir le badge de certification
-      </a>
+      <a class="badge-link" href="ccna3.pdf" target="_blank">Ouvrir le PDF CCNA 3</a>
     </div>
   </section>
 
   <section class="slide" id="linux">
     <a href="#certifications" class="back">← Retour aux certifications</a>
-
     <div class="detail-box">
       <h2>Linux</h2>
-
       <ul>
-        <li>Administrer un système Linux.</li>
-        <li>Gérer les utilisateurs, groupes et permissions.</li>
-        <li>Utiliser efficacement le terminal Linux.</li>
-        <li>Comprendre le rôle de Linux dans les infrastructures IT.</li>
+        <li>Utilisation des commandes essentielles dans un terminal.</li>
+        <li>Gestion des utilisateurs, groupes et permissions.</li>
+        <li>Manipulation des fichiers, dossiers, processus et services.</li>
+        <li>Compréhension du rôle de Linux dans les serveurs et les infrastructures informatiques.</li>
+        <li>Cette certification m’a apporté plus d’autonomie dans l’administration système.</li>
       </ul>
 
-      <a class="badge-link" href="TON-LIEN-LINUX" target="_blank">
-        Ouvrir le badge de certification
-      </a>
+      <a class="badge-link disabled">PDF à ajouter prochainement</a>
     </div>
   </section>
 
   <section class="slide" id="devops">
     <a href="#certifications" class="back">← Retour aux certifications</a>
-
     <div class="detail-box">
       <h2>DevOps</h2>
-
       <ul>
-        <li>Comprendre les méthodes DevOps.</li>
-        <li>Découvrir l’automatisation et l’intégration continue.</li>
-        <li>Comprendre le cycle de vie d’un projet informatique.</li>
-        <li>Développer une vision globale des projets IT.</li>
+        <li>Compréhension du lien entre développement et exploitation informatique.</li>
+        <li>Découverte de l’automatisation et de l’intégration continue.</li>
+        <li>Notions de déploiement, collaboration et amélioration continue.</li>
+        <li>Compréhension du cycle de vie d’un projet informatique.</li>
+        <li>Cette certification m’a permis d’avoir une vision plus globale du travail en projet.</li>
       </ul>
 
-      <a class="badge-link" href="TON-LIEN-DEVOPS" target="_blank">
-        Ouvrir le badge de certification
-      </a>
+      <a class="badge-link disabled">PDF à ajouter prochainement</a>
     </div>
   </section>
 
   <section class="slide" id="cnil">
     <a href="#certifications" class="back">← Retour aux certifications</a>
-
     <div class="detail-box">
       <h2>CNIL</h2>
-
       <ul>
-        <li>Comprendre les principes du RGPD.</li>
-        <li>Identifier les bonnes pratiques liées aux données personnelles.</li>
-        <li>Comprendre les responsabilités légales d’une organisation.</li>
-        <li>Intégrer la sécurité des données dans les projets numériques.</li>
+        <li>Apprentissage des principes du RGPD.</li>
+        <li>Compréhension des droits des personnes sur leurs données personnelles.</li>
+        <li>Identification des bonnes pratiques de protection des données.</li>
+        <li>Sensibilisation aux responsabilités légales des organisations.</li>
+        <li>Cette certification m’a permis de comprendre l’importance de la conformité dans les projets informatiques.</li>
       </ul>
 
-      <a class="badge-link" href="TON-LIEN-CNIL" target="_blank">
-        Ouvrir le badge de certification
-      </a>
+      <a class="badge-link disabled">PDF à ajouter prochainement</a>
     </div>
   </section>
 
@@ -484,7 +471,7 @@
 
     <ul>
       <li>Elles démontrent mon implication dans mon parcours informatique.</li>
-      <li>Elles renforcent ma crédibilité auprès des entreprises.</li>
+      <li>Elles renforcent ma crédibilité auprès des écoles et des entreprises.</li>
       <li>Elles me permettent d’avoir une vision plus complète des projets IT.</li>
       <li>Elles constituent une base solide pour mes futures études.</li>
     </ul>
@@ -503,9 +490,7 @@
       de la gestion de projet et des systèmes d’information.
     </p>
 
-    <p class="footer">
-      Alyssia Noireau — BTS SIO SISR
-    </p>
+    <p class="footer">Alyssia Noireau — BTS SIO SISR</p>
   </section>
 
   <script>
@@ -515,5 +500,4 @@
   </script>
 
 </body>
-
 </html>
