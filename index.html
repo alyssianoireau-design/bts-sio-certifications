@@ -1,30 +1,519 @@
-.theme-btn {
-  position: fixed;
-  top: 22px;
-  right: 25px;
-  z-index: 1000;
-  width: 54px;
-  height: 28px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--card);
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-}
+<!DOCTYPE html>
+<html lang="fr">
 
-.theme-btn::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 6px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--primary);
-  transition: 0.3s;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours de certification - Alyssia Noireau</title>
 
-body.dark .theme-btn::before {
-  left: 30px;
-  background: #f8fafc;
-}
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --primary: #0f172a;
+      --secondary: #2563eb;
+      --text: #334155;
+      --muted: #64748b;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    body.dark {
+      --bg: #020617;
+      --primary: #ffffff;
+      --secondary: #60a5fa;
+      --text: #e5e7eb;
+      --muted: #cbd5e1;
+      --card: #0f172a;
+      --border: #334155;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: 0.3s;
+    }
+
+    .theme-btn {
+      position: fixed;
+      top: 22px;
+      right: 25px;
+      z-index: 1000;
+      width: 54px;
+      height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    .theme-btn::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      transition: 0.3s;
+    }
+
+    body.dark .theme-btn::before {
+      left: 30px;
+      background: #f8fafc;
+    }
+
+    .slide {
+      min-height: 100vh;
+      padding: 70px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cover {
+      background: linear-gradient(135deg, #020617, #1e3a8a);
+      color: white;
+      text-align: center;
+    }
+
+    .cover h1,
+    .cover h2,
+    .cover p {
+      color: white;
+    }
+
+    .cover h1 {
+      font-size: 58px;
+      margin-bottom: 20px;
+    }
+
+    .cover h2 {
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 35px;
+    }
+
+    .cover p {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 42px;
+      color: var(--primary);
+      margin-bottom: 35px;
+    }
+
+    h3 {
+      font-size: 25px;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    p,
+    li {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    ul {
+      padding-left: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .cert-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      padding: 32px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.3s;
+      display: block;
+    }
+
+    .cert-card::after {
+      content: "Voir le détail →";
+      position: absolute;
+      bottom: 22px;
+      right: 28px;
+      color: var(--secondary);
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--secondary);
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.18);
+    }
+
+    .cert-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .cert-card p {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 30px;
+      padding-left: 40px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+      background: var(--card);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -52px;
+      top: 28px;
+      width: 20px;
+      height: 20px;
+      background: var(--secondary);
+      border-radius: 50%;
+      border: 4px solid var(--bg);
+    }
+
+    .year {
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: var(--secondary);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .detail-box {
+      background: var(--card);
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .badge-link {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--secondary);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="theme-btn" onclick="toggleTheme()"></button>
+
+  <section class="slide cover">
+    <h1>Parcours de certification</h1>
+    <h2>BTS SIO option SISR</h2>
+    <p>Alyssia Noireau</p>
+    <p>Session 2026</p>
+  </section>
+
+  <section class="slide">
+    <h2>Présentation de mon parcours</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="year">2023 - 2024</div>
+        <h3>Bac STMG</h3>
+        <p>Option mercatique</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2024 - 2026</div>
+        <h3>BTS SIO</h3>
+        <p>Option SISR : solutions d’infrastructure, systèmes et réseaux</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2026 - 2027</div>
+        <h3>Licence Chef de Projet</h3>
+        <p>Spécialisation sécurité, exploitation et développement</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2027 - 2029</div>
+        <h3>Master MIAGE</h3>
+        <p>Management des systèmes d’information et gestion de projet informatique</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="slide" id="certifications">
+
+    <h2>Certifications obtenues</h2>
+
+    <div class="grid">
+
+      <a class="cert-card" href="#ccna1">
+        <div class="cert-icon">🌐</div>
+        <span class="tag">Réseau</span>
+        <h3>CCNA 1</h3>
+        <p>Fondamentaux réseau, adressage IP et communication entre équipements.</p>
+      </a>
+
+      <a class="cert-card" href="#ccna2">
+        <div class="cert-icon">🖧</div>
+        <span class="tag">Infrastructure</span>
+        <h3>CCNA 2</h3>
+        <p>Routage, commutation, VLAN et dépannage d’une infrastructure réseau.</p>
+      </a>
+
+      <a class="cert-card" href="#ccna3">
+        <div class="cert-icon">🔐</div>
+        <span class="tag">Réseau avancé</span>
+        <h3>CCNA 3</h3>
+        <p>Sécurité, disponibilité et architecture réseau professionnelle.</p>
+      </a>
+
+      <a class="cert-card" href="#linux">
+        <div class="cert-icon">🐧</div>
+        <span class="tag">Système</span>
+        <h3>Linux</h3>
+        <p>Administration système et gestion des services Linux.</p>
+      </a>
+
+      <a class="cert-card" href="#devops">
+        <div class="cert-icon">⚙️</div>
+        <span class="tag">DevOps</span>
+        <h3>DevOps</h3>
+        <p>Automatisation, collaboration et déploiement d’applications.</p>
+      </a>
+
+      <a class="cert-card" href="#cnil">
+        <div class="cert-icon">🛡️</div>
+        <span class="tag">RGPD</span>
+        <h3>CNIL</h3>
+        <p>Protection des données personnelles et conformité numérique.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="slide" id="ccna1">
+    <a href="#certifications" class="back">← Retour aux certifications</a>
+
+    <div class="detail-box">
+      <h2>CCNA 1</h2>
+
+      <ul>
+        <li>Comprendre les bases d’un réseau informatique.</li>
+        <li>Identifier les équipements réseau et leurs rôles.</li>
+        <li>Comprendre l’adressage IP et les protocoles réseau.</li>
+        <li>Développer une première méthode d’analyse réseau.</li>
+      </ul>
+
+      <a class="badge-link" href="TON-LIEN-CCNA1" target="_blank">
+        Ouvrir le badge de certification
+      </a>
+    </div>
+  </section>
+
+  <section class="slide" id="ccna2">
+    <a href="#certifications" class="back">← Retour aux certifications</a>
+
+    <div class="detail-box">
+      <h2>CCNA 2</h2>
+
+      <ul>
+        <li>Configurer des routeurs et commutateurs.</li>
+        <li>Mettre en place des VLAN et du routage.</li>
+        <li>Comprendre le fonctionnement des infrastructures réseau.</li>
+        <li>Développer des compétences en dépannage réseau.</li>
+      </ul>
+
+      <a class="badge-link" href="TON-LIEN-CCNA2" target="_blank">
+        Ouvrir le badge de certification
+      </a>
+    </div>
+  </section>
+
+  <section class="slide" id="ccna3">
+    <a href="#certifications" class="back">← Retour aux certifications</a>
+
+    <div class="detail-box">
+      <h2>CCNA 3</h2>
+
+      <ul>
+        <li>Comprendre les architectures réseau avancées.</li>
+        <li>Travailler sur la sécurité et la disponibilité réseau.</li>
+        <li>Analyser les performances d’un réseau.</li>
+        <li>Découvrir des situations proches du monde professionnel.</li>
+      </ul>
+
+      <a class="badge-link" href="TON-LIEN-CCNA3" target="_blank">
+        Ouvrir le badge de certification
+      </a>
+    </div>
+  </section>
+
+  <section class="slide" id="linux">
+    <a href="#certifications" class="back">← Retour aux certifications</a>
+
+    <div class="detail-box">
+      <h2>Linux</h2>
+
+      <ul>
+        <li>Administrer un système Linux.</li>
+        <li>Gérer les utilisateurs, groupes et permissions.</li>
+        <li>Utiliser efficacement le terminal Linux.</li>
+        <li>Comprendre le rôle de Linux dans les infrastructures IT.</li>
+      </ul>
+
+      <a class="badge-link" href="TON-LIEN-LINUX" target="_blank">
+        Ouvrir le badge de certification
+      </a>
+    </div>
+  </section>
+
+  <section class="slide" id="devops">
+    <a href="#certifications" class="back">← Retour aux certifications</a>
+
+    <div class="detail-box">
+      <h2>DevOps</h2>
+
+      <ul>
+        <li>Comprendre les méthodes DevOps.</li>
+        <li>Découvrir l’automatisation et l’intégration continue.</li>
+        <li>Comprendre le cycle de vie d’un projet informatique.</li>
+        <li>Développer une vision globale des projets IT.</li>
+      </ul>
+
+      <a class="badge-link" href="TON-LIEN-DEVOPS" target="_blank">
+        Ouvrir le badge de certification
+      </a>
+    </div>
+  </section>
+
+  <section class="slide" id="cnil">
+    <a href="#certifications" class="back">← Retour aux certifications</a>
+
+    <div class="detail-box">
+      <h2>CNIL</h2>
+
+      <ul>
+        <li>Comprendre les principes du RGPD.</li>
+        <li>Identifier les bonnes pratiques liées aux données personnelles.</li>
+        <li>Comprendre les responsabilités légales d’une organisation.</li>
+        <li>Intégrer la sécurité des données dans les projets numériques.</li>
+      </ul>
+
+      <a class="badge-link" href="TON-LIEN-CNIL" target="_blank">
+        Ouvrir le badge de certification
+      </a>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Pourquoi ces certifications vont m’aider ?</h2>
+
+    <ul>
+      <li>Elles démontrent mon implication dans mon parcours informatique.</li>
+      <li>Elles renforcent ma crédibilité auprès des entreprises.</li>
+      <li>Elles me permettent d’avoir une vision plus complète des projets IT.</li>
+      <li>Elles constituent une base solide pour mes futures études.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Conclusion</h2>
+
+    <p>
+      Ces certifications m’ont permis de renforcer mes compétences techniques
+      et professionnelles tout au long de mon BTS SIO SISR.
+    </p>
+
+    <p>
+      Elles représentent une étape importante dans mon évolution vers les métiers
+      de la gestion de projet et des systèmes d’information.
+    </p>
+
+    <p class="footer">
+      Alyssia Noireau — BTS SIO SISR
+    </p>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+
+</html>
