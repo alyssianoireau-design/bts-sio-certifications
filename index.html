@@ -254,6 +254,7 @@
     .badge-link {
       display: inline-block;
       margin-top: 25px;
+      margin-right: 10px;
       padding: 12px 20px;
       border-radius: 999px;
       background: var(--secondary);
@@ -261,6 +262,72 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+    }
+
+    .module-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .impact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 100%;
+      background: var(--secondary);
+    }
+
+    .impact-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #dbeafe;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .impact-card p {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .highlight-box {
+      margin-top: 35px;
+      padding: 28px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #2563eb, #1e3a8a);
+      color: white;
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.25);
+    }
+
+    .highlight-box p {
+      color: white;
+      font-size: 20px;
     }
 
     .footer {
@@ -292,8 +359,8 @@
         <h3>Bac STMG</h3>
         <p>Option mercatique</p>
         <p>
-          Cette formation m’a permis de développer des compétences en communication,
-          marketing et analyse du fonctionnement des organisations.
+          Cette formation m’a permis de développer des compétences
+          en communication, marketing et analyse des organisations.
         </p>
       </div>
 
@@ -312,8 +379,8 @@
         <h3>Licence Chef de Projet</h3>
         <p>Spécialisation sécurité, exploitation et développement</p>
         <p>
-          Cette licence me permettra de développer des compétences en gestion
-          de projet, coordination d’équipe et pilotage informatique.
+          Cette licence me permettra de développer des compétences
+          en gestion de projet et coordination d’équipe.
         </p>
       </div>
 
@@ -322,8 +389,8 @@
         <h3>Master MIAGE</h3>
         <p>Management des systèmes d’information</p>
         <p>
-          Mon objectif est d’évoluer vers des postes à responsabilité dans
-          les systèmes d’information et la gestion de projets IT.
+          Mon objectif est d’évoluer vers des postes à responsabilité
+          dans les systèmes d’information.
         </p>
       </div>
 
@@ -342,7 +409,7 @@
         <h3>CCNA 1</h3>
         <p>
           Fondamentaux réseau, modèles OSI/TCP-IP,
-          adressage IPv4 et communication entre équipements.
+          adressage IPv4 et communication réseau.
         </p>
       </a>
 
@@ -351,8 +418,8 @@
         <span class="tag">Infrastructure</span>
         <h3>CCNA 2</h3>
         <p>
-          Routage, commutation, VLAN,
-          services réseau et dépannage d’infrastructure.
+          Routage, VLAN, commutation,
+          dépannage et administration réseau.
         </p>
       </a>
 
@@ -362,7 +429,7 @@
         <h3>CCNA 3</h3>
         <p>
           Architecture réseau avancée,
-          sécurité, haute disponibilité et performance.
+          sécurité et haute disponibilité.
         </p>
       </a>
 
@@ -371,8 +438,8 @@
         <span class="tag">Système</span>
         <h3>Linux</h3>
         <p>
-          Administration Linux, utilisateurs,
-          permissions, services et terminal système.
+          Administration Linux,
+          utilisateurs, services et terminal.
         </p>
       </a>
 
@@ -381,8 +448,8 @@
         <span class="tag">DevOps</span>
         <h3>DevOps</h3>
         <p>
-          Automatisation, intégration continue,
-          déploiement et collaboration IT.
+          Automatisation, intégration continue
+          et déploiement applicatif.
         </p>
       </a>
 
@@ -391,8 +458,8 @@
         <span class="tag">RGPD</span>
         <h3>CNIL</h3>
         <p>
-          Protection des données personnelles,
-          conformité RGPD et cybersécurité.
+          Protection des données,
+          RGPD et conformité numérique.
         </p>
       </a>
 
@@ -401,7 +468,6 @@
 
   <!-- CCNA 1 -->
   <section class="slide" id="ccna1">
-
     <a href="#certifications" class="back">← Retour aux certifications</a>
 
     <div class="detail-box">
@@ -409,19 +475,19 @@
       <h2>CCNA 1</h2>
 
       <ul>
-        <li>Découverte des fondamentaux des réseaux informatiques et de la communication entre équipements.</li>
+        <li>Découverte des fondamentaux des réseaux informatiques.</li>
 
-        <li>Compréhension des modèles OSI et TCP/IP permettant de structurer les échanges réseau.</li>
+        <li>Compréhension des modèles OSI et TCP/IP.</li>
 
-        <li>Apprentissage de l’adressage IPv4, du découpage en sous-réseaux et des protocoles essentiels.</li>
+        <li>Apprentissage de l’adressage IPv4 et des sous-réseaux.</li>
 
-        <li>Identification du rôle des équipements réseau tels que les switchs, routeurs et points d’accès.</li>
+        <li>Identification du rôle des équipements réseau.</li>
 
-        <li>Développement d’une première méthodologie d’analyse et de résolution de problèmes réseau.</li>
+        <li>Développement d’une méthodologie de résolution de problèmes réseau.</li>
 
         <li>
-          Cette certification m’a permis d’acquérir les bases indispensables
-          pour comprendre le fonctionnement d’une infrastructure réseau professionnelle.
+          Cette certification m’a permis d’acquérir
+          les bases essentielles des infrastructures réseau.
         </li>
       </ul>
 
@@ -430,12 +496,10 @@
       </a>
 
     </div>
-
   </section>
 
   <!-- CCNA 2 -->
   <section class="slide" id="ccna2">
-
     <a href="#certifications" class="back">← Retour aux certifications</a>
 
     <div class="detail-box">
@@ -443,19 +507,17 @@
       <h2>CCNA 2</h2>
 
       <ul>
-        <li>Configuration avancée des commutateurs et routeurs Cisco.</li>
+        <li>Configuration avancée des switchs et routeurs Cisco.</li>
 
-        <li>Mise en place des VLAN et du routage inter-VLAN afin de segmenter et sécuriser un réseau.</li>
+        <li>Mise en place des VLAN et du routage inter-VLAN.</li>
 
-        <li>Compréhension des protocoles de routage dynamique et des services réseau essentiels.</li>
+        <li>Compréhension des protocoles réseau avancés.</li>
 
-        <li>Développement de compétences en dépannage et analyse des incidents réseau.</li>
-
-        <li>Découverte de l’administration d’infrastructures réseau proches des environnements professionnels.</li>
+        <li>Développement des compétences en dépannage réseau.</li>
 
         <li>
-          Cette certification m’a permis de passer de la théorie réseau
-          à des configurations concrètes et professionnelles.
+          Cette certification m’a permis de mieux comprendre
+          l’administration d’un réseau professionnel.
         </li>
       </ul>
 
@@ -464,12 +526,10 @@
       </a>
 
     </div>
-
   </section>
 
   <!-- CCNA 3 -->
   <section class="slide" id="ccna3">
-
     <a href="#certifications" class="back">← Retour aux certifications</a>
 
     <div class="detail-box">
@@ -477,19 +537,17 @@
       <h2>CCNA 3</h2>
 
       <ul>
-        <li>Étude des architectures réseau avancées et des solutions de haute disponibilité.</li>
+        <li>Étude des architectures réseau avancées.</li>
 
-        <li>Approfondissement des notions de cybersécurité appliquées aux infrastructures réseau.</li>
+        <li>Approfondissement des notions de cybersécurité.</li>
 
-        <li>Analyse des performances réseau et optimisation des communications.</li>
+        <li>Analyse des performances réseau.</li>
 
-        <li>Configuration de solutions réseau complexes adaptées aux besoins d’une entreprise.</li>
-
-        <li>Résolution d’incidents dans des environnements techniques plus exigeants.</li>
+        <li>Résolution d’incidents complexes.</li>
 
         <li>
-          Cette certification m’a permis de développer une vision plus globale
-          de l’administration réseau en entreprise.
+          Cette certification m’a permis de développer
+          une vision plus globale des infrastructures IT.
         </li>
       </ul>
 
@@ -498,12 +556,10 @@
       </a>
 
     </div>
-
   </section>
 
-  <!-- LINUX -->
+  <!-- Linux -->
   <section class="slide" id="linux">
-
     <a href="#certifications" class="back">← Retour aux certifications</a>
 
     <div class="detail-box">
@@ -511,33 +567,25 @@
       <h2>Linux</h2>
 
       <ul>
-        <li>Administration d’un système d’exploitation Linux en ligne de commande.</li>
+        <li>Administration d’un système Linux en ligne de commande.</li>
 
-        <li>Gestion des utilisateurs, groupes, permissions et sécurité des accès.</li>
+        <li>Gestion des utilisateurs, groupes et permissions.</li>
 
-        <li>Manipulation des processus, services, fichiers et systèmes de stockage.</li>
+        <li>Manipulation des processus et services système.</li>
 
-        <li>Compréhension du rôle de Linux dans les serveurs et infrastructures informatiques.</li>
-
-        <li>Découverte des bonnes pratiques d’administration système et d’automatisation.</li>
+        <li>Compréhension du rôle de Linux dans les serveurs.</li>
 
         <li>
-          Cette certification m’a permis de renforcer mon autonomie
-          dans la gestion d’environnements systèmes professionnels.
+          Cette certification m’a permis de gagner en autonomie
+          dans l’administration système.
         </li>
       </ul>
 
-      <a class="badge-link" href="Module 1.pdf" target="_blank">
-        Ouvrir le module Linux
-      </a>
-
     </div>
-
   </section>
 
-  <!-- DEVOPS -->
+  <!-- DevOps -->
   <section class="slide" id="devops">
-
     <a href="#certifications" class="back">← Retour aux certifications</a>
 
     <div class="detail-box">
@@ -545,33 +593,25 @@
       <h2>DevOps</h2>
 
       <ul>
-        <li>Découverte des principes DevOps et de la collaboration entre développement et exploitation.</li>
+        <li>Découverte des principes DevOps.</li>
 
-        <li>Compréhension des notions d’intégration continue et de déploiement continu.</li>
+        <li>Compréhension de l’intégration continue et du déploiement continu.</li>
 
-        <li>Initiation aux méthodes d’automatisation et d’amélioration continue.</li>
+        <li>Initiation à l’automatisation et à l’amélioration continue.</li>
 
-        <li>Analyse du cycle de vie complet d’un projet informatique.</li>
-
-        <li>Compréhension des enjeux liés à la rapidité, la qualité et la fiabilité des déploiements.</li>
+        <li>Analyse du cycle de vie d’un projet informatique.</li>
 
         <li>
-          Cette certification m’a permis d’acquérir une vision globale
-          des méthodes modernes utilisées dans les projets informatiques.
+          Cette certification m’a permis d’avoir
+          une vision globale des projets IT modernes.
         </li>
       </ul>
 
-      <a class="badge-link" href="Module 2.pdf" target="_blank">
-        Ouvrir le module DevOps
-      </a>
-
     </div>
-
   </section>
 
   <!-- CNIL -->
   <section class="slide" id="cnil">
-
     <a href="#certifications" class="back">← Retour aux certifications</a>
 
     <div class="detail-box">
@@ -579,48 +619,140 @@
       <h2>CNIL</h2>
 
       <ul>
-        <li>Compréhension des principes fondamentaux du RGPD et de la protection des données personnelles.</li>
+        <li>Compréhension des principes du RGPD.</li>
 
-        <li>Identification des droits des utilisateurs concernant leurs données numériques.</li>
+        <li>Identification des droits des utilisateurs concernant leurs données.</li>
 
-        <li>Analyse des obligations légales des organisations en matière de confidentialité.</li>
+        <li>Analyse des obligations légales des organisations.</li>
 
-        <li>Sensibilisation aux risques liés à la cybersécurité et à la gestion des données.</li>
-
-        <li>Découverte des bonnes pratiques permettant de garantir la conformité numérique.</li>
+        <li>Sensibilisation aux risques liés à la cybersécurité.</li>
 
         <li>
-          Cette certification m’a permis de comprendre l’importance
-          de la protection des données dans les projets informatiques modernes.
+          Cette certification m’a permis de comprendre
+          l’importance de la protection des données.
         </li>
       </ul>
 
-      <a class="badge-link" href="Module 3.pdf" target="_blank">
-        Ouvrir le module CNIL
-      </a>
+      <div class="module-links">
+
+        <a class="badge-link" href="Module 1.pdf" target="_blank">
+          Module 1
+        </a>
+
+        <a class="badge-link" href="Module 2.pdf" target="_blank">
+          Module 2
+        </a>
+
+        <a class="badge-link" href="Module 3.pdf" target="_blank">
+          Module 3
+        </a>
+
+        <a class="badge-link" href="Module 4.pdf" target="_blank">
+          Module 4
+        </a>
+
+        <a class="badge-link" href="Module 5.pdf" target="_blank">
+          Module 5
+        </a>
+
+        <a class="badge-link" href="Module 6.pdf" target="_blank">
+          Module 6
+        </a>
+
+      </div>
 
     </div>
-
   </section>
 
+  <!-- IMPACT -->
   <section class="slide">
 
     <h2>Pourquoi ces certifications vont m’aider ?</h2>
 
-    <ul>
-      <li>Elles démontrent mon implication et ma motivation dans mon parcours informatique.</li>
+    <div class="impact-grid">
 
-      <li>Elles renforcent ma crédibilité auprès des écoles et des entreprises.</li>
+      <div class="impact-card">
+        <div class="impact-number">1</div>
 
-      <li>Elles me permettent d’avoir une vision plus complète des infrastructures et projets IT.</li>
+        <h3>Valoriser mon profil</h3>
 
-      <li>Elles constituent une base solide pour poursuivre mes études en gestion de projet informatique.</li>
+        <p>
+          Ces certifications montrent ma motivation,
+          mon investissement personnel et ma capacité
+          à approfondir mes compétences techniques.
+        </p>
+      </div>
 
-      <li>
-        Elles représentent également un atout professionnel
-        pour évoluer vers des postes à responsabilité.
-      </li>
-    </ul>
+      <div class="impact-card">
+        <div class="impact-number">2</div>
+
+        <h3>Renforcer mes compétences</h3>
+
+        <p>
+          Les certifications CCNA m’ont permis de développer
+          des bases solides en réseau, sécurité et infrastructure.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-number">3</div>
+
+        <h3>Développer une vision professionnelle</h3>
+
+        <p>
+          Grâce à Linux, DevOps et CNIL,
+          j’ai compris l’importance de la sécurité,
+          de l’exploitation et de la conformité.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-number">4</div>
+
+        <h3>Préparer ma poursuite d’études</h3>
+
+        <p>
+          Ces certifications constituent une base solide
+          pour poursuivre vers une licence Chef de Projet.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-number">5</div>
+
+        <h3>Gagner en crédibilité</h3>
+
+        <p>
+          Elles démontrent mon sérieux,
+          ma capacité d’apprentissage
+          et mon implication dans mon parcours.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-number">6</div>
+
+        <h3>Construire mon projet professionnel</h3>
+
+        <p>
+          Elles me permettent de mieux comprendre
+          les contraintes techniques d’un projet informatique
+          et de me rapprocher du métier de cheffe de projet.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="highlight-box">
+
+      <p>
+        En résumé, ces certifications montrent que j’ai construit
+        un parcours cohérent : des bases techniques solides,
+        une sensibilisation à la cybersécurité et à la conformité,
+        puis une orientation progressive vers la gestion de projet informatique.
+      </p>
+
+    </div>
 
   </section>
 
@@ -629,13 +761,14 @@
     <h2>Conclusion</h2>
 
     <p>
-      Ces certifications m’ont permis de renforcer mes compétences techniques
-      et professionnelles tout au long de mon BTS SIO SISR.
+      Ces certifications m’ont permis de renforcer mes compétences
+      techniques et professionnelles tout au long de mon BTS SIO SISR.
     </p>
 
     <p>
-      Elles représentent une étape importante dans mon évolution vers les métiers
-      de la gestion de projet et des systèmes d’information.
+      Elles représentent une étape importante dans mon évolution
+      vers les métiers de la gestion de projet
+      et des systèmes d’information.
     </p>
 
     <p class="footer">
