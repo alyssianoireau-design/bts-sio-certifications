@@ -16,6 +16,16 @@
       --border: #e2e8f0;
     }
 
+    body.dark {
+      --bg: #020617;
+      --primary: #ffffff;
+      --secondary: #60a5fa;
+      --text: #e5e7eb;
+      --muted: #cbd5e1;
+      --card: #0f172a;
+      --border: #334155;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -27,6 +37,22 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      transition: 0.3s;
+    }
+
+    .theme-btn {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      z-index: 1000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .slide {
@@ -39,52 +65,52 @@
     }
 
     .cover {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      background: linear-gradient(135deg, #020617, #1e3a8a);
       color: white;
       text-align: center;
     }
 
+    .cover h1,
+    .cover h2,
+    .cover p {
+      color: white;
+    }
+
     .cover h1 {
-      font-size: 56px;
+      font-size: 58px;
       margin-bottom: 20px;
     }
 
     .cover h2 {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 400;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     .cover p {
-      font-size: 22px;
-      color: #dbeafe;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
     h2 {
       font-size: 42px;
       color: var(--primary);
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     h3 {
-      font-size: 26px;
+      font-size: 25px;
       color: var(--secondary);
       margin-bottom: 15px;
     }
 
-    p {
+    p, li {
       font-size: 21px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     ul {
-      margin-top: 20px;
       padding-left: 28px;
-    }
-
-    li {
-      font-size: 21px;
-      margin-bottom: 14px;
     }
 
     .grid {
@@ -113,18 +139,53 @@
       margin-bottom: 16px;
     }
 
-    .highlight {
+    .timeline {
+      position: relative;
+      margin-top: 30px;
+      padding-left: 40px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+      background: var(--card);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -52px;
+      top: 28px;
+      width: 20px;
+      height: 20px;
+      background: var(--secondary);
+      border-radius: 50%;
+      border: 4px solid var(--bg);
+    }
+
+    .year {
       color: var(--secondary);
       font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 6px;
     }
 
     .footer {
       margin-top: 40px;
-      font-size: 16px;
       color: var(--muted);
+      font-size: 16px;
     }
 
     @media print {
+      .theme-btn {
+        display: none;
+      }
+
       .slide {
         page-break-after: always;
       }
@@ -134,24 +195,43 @@
 
 <body>
 
+  <button class="theme-btn" onclick="toggleTheme()">Mode noir / blanc</button>
+
   <section class="slide cover">
     <h1>Parcours de certification</h1>
     <h2>BTS SIO option SISR</h2>
     <p>Alyssia Noireau</p>
-    <p>Projet professionnel : Licence Chef de Projet en alternance</p>
+    <p>Session 2026</p>
   </section>
 
   <section class="slide">
     <h2>Présentation de mon parcours</h2>
-    <p>
-      Je suis actuellement en <span class="highlight">BTS SIO option SISR</span>,
-      une formation orientée vers l’administration des systèmes, des réseaux
-      et la cybersécurité.
-    </p>
-    <p>
-      Dans le cadre de mon parcours, j’ai choisi de passer plusieurs certifications
-      afin de renforcer mes compétences techniques et de valoriser mon profil.
-    </p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">Étape 1</div>
+        <h3>Bac STMG</h3>
+        <p>Option mercatique</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">Étape 2</div>
+        <h3>BTS SIO</h3>
+        <p>Option SISR : solutions d’infrastructure, systèmes et réseaux</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">Année prochaine</div>
+        <h3>Licence Chef de Projet</h3>
+        <p>Spécialisation sécurité, exploitation et développement</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">Objectif suivant</div>
+        <h3>Master MIAGE</h3>
+        <p>Management des systèmes d’information et gestion de projet informatique</p>
+      </div>
+    </div>
   </section>
 
   <section class="slide">
@@ -171,7 +251,7 @@
     <h2>Ce que les certifications CCNA m’ont appris</h2>
     <ul>
       <li>Comprendre le fonctionnement d’un réseau informatique.</li>
-      <li>Identifier les rôles des routeurs, switches, VLAN et protocoles réseau.</li>
+      <li>Identifier le rôle des routeurs, switches, VLAN et protocoles réseau.</li>
       <li>Configurer et dépanner une infrastructure réseau.</li>
       <li>Développer une méthode d’analyse face aux incidents techniques.</li>
     </ul>
@@ -183,7 +263,7 @@
       <li>Administrer un système d’exploitation Linux.</li>
       <li>Gérer les utilisateurs, les droits et les permissions.</li>
       <li>Utiliser le terminal pour exécuter des commandes efficacement.</li>
-      <li>Comprendre l’importance de Linux dans les serveurs et l’infrastructure IT.</li>
+      <li>Comprendre l’importance de Linux dans les serveurs et infrastructures IT.</li>
     </ul>
   </section>
 
@@ -193,7 +273,7 @@
       <li>Comprendre le lien entre développement et exploitation informatique.</li>
       <li>Découvrir l’automatisation et l’intégration continue.</li>
       <li>Comprendre l’importance du travail collaboratif dans les projets IT.</li>
-      <li>Développer une vision plus globale du cycle de vie d’un projet informatique.</li>
+      <li>Développer une vision globale du cycle de vie d’un projet informatique.</li>
     </ul>
   </section>
 
@@ -205,40 +285,6 @@
       <li>Prendre conscience des responsabilités légales d’une organisation.</li>
       <li>Intégrer la protection des données dans les projets informatiques.</li>
     </ul>
-  </section>
-
-  <section class="slide">
-    <h2>Compétences développées</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Compétences techniques</h3>
-        <p>Réseaux, systèmes, Linux, sécurité, conformité et outils DevOps.</p>
-      </div>
-
-      <div class="card">
-        <h3>Compétences professionnelles</h3>
-        <p>Autonomie, rigueur, méthode, résolution de problèmes et organisation.</p>
-      </div>
-
-      <div class="card">
-        <h3>Vision projet</h3>
-        <p>Compréhension des besoins techniques, respect des contraintes et travail en équipe.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide">
-    <h2>Mon projet professionnel</h2>
-    <p>
-      L’année prochaine, je souhaite intégrer une
-      <span class="highlight">Licence Chef de Projet en alternance</span>.
-    </p>
-    <p>
-      Mon objectif est de continuer à développer mes compétences techniques,
-      tout en acquérant des compétences en gestion de projet, communication,
-      organisation et coordination d’équipe.
-    </p>
   </section>
 
   <section class="slide">
@@ -258,13 +304,18 @@
       et de mieux préparer la suite de mon parcours.
     </p>
     <p>
-      Elles représentent un véritable atout pour mon projet professionnel :
-      poursuivre en licence Chef de Projet en alternance et évoluer dans le domaine
-      de l’informatique.
+      Elles représentent un véritable atout pour évoluer dans l’informatique,
+      renforcer mes compétences et préparer mes futurs projets d’études.
     </p>
 
     <p class="footer">Alyssia Noireau — BTS SIO SISR</p>
   </section>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 
 </body>
 </html>
