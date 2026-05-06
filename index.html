@@ -49,7 +49,7 @@
         var(--bg);
 
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       transition: 0.3s;
     }
 
@@ -81,7 +81,7 @@
 
     body.dark .theme-btn::before {
       left: 30px;
-      background: #fff;
+      background: white;
     }
 
     .slide {
@@ -100,7 +100,7 @@
     }
 
     .cover h1 {
-      font-size: 60px;
+      font-size: 64px;
       margin-bottom: 20px;
     }
 
@@ -116,13 +116,13 @@
     }
 
     h2 {
-      font-size: 42px;
+      font-size: 46px;
       color: var(--primary);
       margin-bottom: 35px;
     }
 
     h3 {
-      font-size: 24px;
+      font-size: 26px;
       color: var(--secondary);
       margin-bottom: 14px;
     }
@@ -130,7 +130,7 @@
     p,
     li {
       font-size: 20px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     ul {
@@ -147,8 +147,8 @@
     .timeline-item {
       position: relative;
       margin-bottom: 35px;
-      padding: 28px;
-      border-radius: 20px;
+      padding: 32px;
+      border-radius: 22px;
       border: 1px solid var(--border);
 
       background:
@@ -158,14 +158,14 @@
           rgba(255,248,240,0.92)
         );
 
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
     }
 
     .timeline-item::before {
       content: "";
       position: absolute;
       left: -52px;
-      top: 28px;
+      top: 30px;
       width: 20px;
       height: 20px;
       background: var(--secondary);
@@ -177,6 +177,7 @@
       color: var(--secondary);
       font-weight: bold;
       margin-bottom: 10px;
+      font-size: 18px;
     }
 
     .grid {
@@ -248,7 +249,7 @@
     .detail-box {
       background: var(--card);
       border: 1px solid var(--border);
-      padding: 35px;
+      padding: 40px;
       border-radius: 24px;
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
     }
@@ -259,13 +260,14 @@
       text-decoration: none;
       color: var(--secondary);
       font-weight: bold;
+      font-size: 18px;
     }
 
     .badge-link {
       display: inline-block;
       margin-top: 20px;
       margin-right: 10px;
-      padding: 12px 18px;
+      padding: 12px 20px;
       border-radius: 999px;
       background: var(--secondary);
       color: white;
@@ -349,23 +351,6 @@
       margin-bottom: 18px;
     }
 
-    .skills-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 35px;
-    }
-
-    .skill-pill {
-      padding: 18px;
-      border-radius: 18px;
-      text-align: center;
-      font-weight: bold;
-      border: 1px solid var(--border);
-      background: var(--card);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-    }
-
     .final-impact {
       margin-top: 35px;
       padding: 38px;
@@ -392,7 +377,7 @@
 
   <button class="theme-btn" onclick="toggleTheme()"></button>
 
-  <!-- COVER -->
+  <!-- ACCUEIL -->
   <section class="slide cover">
     <h1>Parcours de certification</h1>
     <h2>BTS SIO option SISR</h2>
@@ -409,26 +394,72 @@
 
       <div class="timeline-item">
         <div class="year">2023 - 2024</div>
-        <h3>Bac STMG</h3>
+        <h3>Baccalauréat STMG</h3>
         <p>Option mercatique</p>
+
+        <p>
+          Cette formation m’a permis de développer des compétences
+          en communication, analyse et gestion.
+        </p>
+
+        <p>
+          J’ai appris à travailler sur des problématiques concrètes
+          liées au fonctionnement des entreprises et à l’organisation.
+        </p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2024 - 2026</div>
         <h3>BTS SIO</h3>
-        <p>Option SISR : réseaux et cybersécurité</p>
+
+        <p>
+          Option SISR — Solutions d’infrastructure,
+          systèmes et réseaux
+        </p>
+
+        <p>
+          Cette formation me permet de développer des compétences
+          techniques dans les domaines des réseaux,
+          des systèmes et de la cybersécurité.
+        </p>
+
+        <p>
+          J’ai appris à configurer des équipements réseau,
+          administrer des serveurs et sécuriser des infrastructures.
+        </p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2026 - 2027</div>
         <h3>Licence Chef de Projet</h3>
-        <p>Sécurité, exploitation et développement</p>
+
+        <p>
+          Sécurité, exploitation et développement
+        </p>
+
+        <p>
+          Mon objectif est de renforcer mes compétences
+          en gestion de projet informatique.
+        </p>
+
+        <p>
+          Cette licence me permettra de développer
+          une vision globale des projets IT.
+        </p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2027 - 2029</div>
         <h3>Master MIAGE</h3>
-        <p>Management des systèmes d’information</p>
+
+        <p>
+          Management des systèmes d’information
+        </p>
+
+        <p>
+          Mon objectif est d’évoluer vers des postes
+          à responsabilité dans les systèmes d’information.
+        </p>
       </div>
 
     </div>
@@ -726,15 +757,6 @@
         </p>
       </div>
 
-    </div>
-
-    <div class="skills-strip">
-      <div class="skill-pill">Réseau</div>
-      <div class="skill-pill">Système</div>
-      <div class="skill-pill">Cybersécurité</div>
-      <div class="skill-pill">RGPD</div>
-      <div class="skill-pill">Méthode projet</div>
-      <div class="skill-pill">Autonomie</div>
     </div>
 
     <div class="final-impact">
