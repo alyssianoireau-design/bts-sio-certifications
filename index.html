@@ -8,16 +8,14 @@
 
   <style>
     :root {
-      --bg: #f4f7fb;
+      --bg: #f5efe6;
       --primary: #0f172a;
       --secondary: #2563eb;
       --accent: #7c3aed;
-      --success: #059669;
-      --warning: #ea580c;
       --text: #334155;
       --muted: #64748b;
-      --card: #ffffff;
-      --border: #e2e8f0;
+      --card: #fffaf3;
+      --border: #e7dccd;
     }
 
     body.dark {
@@ -25,11 +23,9 @@
       --primary: #ffffff;
       --secondary: #60a5fa;
       --accent: #a78bfa;
-      --success: #34d399;
-      --warning: #fb923c;
       --text: #e5e7eb;
       --muted: #cbd5e1;
-      --card: #0f172a;
+      --card: #111827;
       --border: #334155;
     }
 
@@ -42,7 +38,15 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top right,
+          rgba(37, 99, 235, 0.08),
+          transparent 30%),
+        radial-gradient(circle at bottom left,
+          rgba(124, 58, 237, 0.06),
+          transparent 30%),
+        var(--bg);
+
       color: var(--text);
       line-height: 1.6;
       transition: 0.3s;
@@ -76,7 +80,7 @@
 
     body.dark .theme-btn::before {
       left: 30px;
-      background: #f8fafc;
+      background: #fff;
     }
 
     .slide {
@@ -85,34 +89,29 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-bottom: 1px solid var(--border);
     }
 
     .cover {
       background: linear-gradient(135deg, #020617, #1e3a8a);
       color: white;
       text-align: center;
-    }
-
-    .cover h1,
-    .cover h2,
-    .cover p {
-      color: white;
+      border-radius: 0 0 40px 40px;
     }
 
     .cover h1 {
-      font-size: 58px;
+      font-size: 60px;
       margin-bottom: 20px;
     }
 
     .cover h2 {
       font-size: 30px;
       font-weight: 400;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .cover p {
       font-size: 24px;
+      color: #dbeafe;
     }
 
     h2 {
@@ -122,19 +121,61 @@
     }
 
     h3 {
-      font-size: 25px;
+      font-size: 24px;
       color: var(--secondary);
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     p,
     li {
       font-size: 20px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     ul {
-      padding-left: 28px;
+      padding-left: 25px;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 30px;
+      padding-left: 40px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.95),
+          rgba(255,248,240,0.92)
+        );
+
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -52px;
+      top: 28px;
+      width: 20px;
+      height: 20px;
+      background: var(--secondary);
+      border-radius: 50%;
+      border: 4px solid var(--bg);
+    }
+
+    .year {
+      color: var(--secondary);
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     .grid {
@@ -147,39 +188,44 @@
     .cert-card {
       position: relative;
       overflow: hidden;
-      background: var(--card);
       padding: 32px;
-      border-radius: 22px;
+      border-radius: 24px;
       border: 1px solid var(--border);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.95),
+          rgba(255,248,240,0.92)
+        );
+
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+
       text-decoration: none;
       color: var(--text);
       transition: 0.3s;
       display: block;
     }
 
-    .cert-card::after {
-      content: "Voir le détail →";
-      position: absolute;
-      bottom: 22px;
-      right: 28px;
-      color: var(--secondary);
-      font-size: 15px;
-      font-weight: bold;
-    }
-
     .cert-card:hover {
       transform: translateY(-8px);
-      border-color: var(--secondary);
       box-shadow: 0 22px 45px rgba(15, 23, 42, 0.18);
     }
 
+    .cert-card::after {
+      content: "Voir le détail →";
+      position: absolute;
+      bottom: 20px;
+      right: 28px;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
     .cert-icon {
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       border-radius: 18px;
       background: #dbeafe;
-      color: #1d4ed8;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -198,83 +244,39 @@
       margin-bottom: 18px;
     }
 
-    .cert-card p {
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 35px;
-    }
-
-    .timeline {
-      position: relative;
-      margin-top: 30px;
-      padding-left: 40px;
-      border-left: 4px solid var(--secondary);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 35px;
+    .detail-box {
       background: var(--card);
-      padding: 25px;
-      border-radius: 16px;
       border: 1px solid var(--border);
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -52px;
-      top: 28px;
-      width: 20px;
-      height: 20px;
-      background: var(--secondary);
-      border-radius: 50%;
-      border: 4px solid var(--bg);
-    }
-
-    .year {
-      color: var(--secondary);
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 6px;
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
     }
 
     .back {
+      margin-bottom: 25px;
       display: inline-block;
-      margin-bottom: 30px;
+      text-decoration: none;
       color: var(--secondary);
       font-weight: bold;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .detail-box {
-      background: var(--card);
-      padding: 35px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
     .badge-link {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 20px;
       margin-right: 10px;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border-radius: 999px;
       background: var(--secondary);
       color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
     }
 
     .module-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 25px;
+      margin-top: 20px;
     }
 
     .impact-hero {
@@ -294,7 +296,6 @@
     .impact-hero p {
       color: #dbeafe;
       font-size: 22px;
-      max-width: 1000px;
     }
 
     .impact-grid {
@@ -304,11 +305,19 @@
     }
 
     .impact-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
       padding: 30px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.95),
+          rgba(255,248,240,0.92)
+        );
+
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+
       position: relative;
       overflow: hidden;
     }
@@ -318,33 +327,23 @@
       position: absolute;
       top: 0;
       left: 0;
-      height: 7px;
+      height: 6px;
       width: 100%;
-      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      background: linear-gradient(90deg,
+          var(--secondary),
+          var(--accent));
     }
 
     .impact-icon {
-      width: 55px;
-      height: 55px;
+      width: 58px;
+      height: 58px;
       border-radius: 18px;
       background: #dbeafe;
-      color: #1d4ed8;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 28px;
       margin-bottom: 18px;
-    }
-
-    .impact-card h3 {
-      color: var(--primary);
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .impact-card p {
-      font-size: 18px;
-      color: var(--muted);
     }
 
     .skills-strip {
@@ -355,19 +354,18 @@
     }
 
     .skill-pill {
-      background: var(--card);
-      border: 1px solid var(--border);
+      padding: 18px;
       border-radius: 18px;
-      padding: 20px;
       text-align: center;
       font-weight: bold;
-      color: var(--primary);
+      border: 1px solid var(--border);
+      background: var(--card);
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
     .final-impact {
       margin-top: 35px;
-      padding: 35px;
+      padding: 38px;
       border-radius: 28px;
       background: linear-gradient(135deg, #2563eb, #7c3aed);
       color: white;
@@ -376,18 +374,13 @@
 
     .final-impact h3 {
       color: white;
-      font-size: 28px;
+      margin-bottom: 16px;
+      font-size: 30px;
     }
 
     .final-impact p {
       color: white;
-      font-size: 20px;
-    }
-
-    .footer {
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 16px;
+      font-size: 21px;
     }
   </style>
 </head>
@@ -403,202 +396,121 @@
     <p>Session 2026</p>
   </section>
 
+  <!-- PARCOURS -->
   <section class="slide">
+
     <h2>Présentation de mon parcours</h2>
 
     <div class="timeline">
+
       <div class="timeline-item">
         <div class="year">2023 - 2024</div>
         <h3>Bac STMG</h3>
         <p>Option mercatique</p>
-        <p>Cette formation m’a permis de développer des compétences en communication, marketing et analyse des organisations.</p>
+        <p>
+          Développement de compétences en communication,
+          marketing et analyse des organisations.
+        </p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2024 - 2026</div>
         <h3>BTS SIO</h3>
-        <p>Option SISR : solutions d’infrastructure, systèmes et réseaux</p>
-        <p>Ce BTS me forme à l’administration réseau, systèmes, cybersécurité et gestion d’infrastructures informatiques.</p>
+        <p>Option SISR</p>
+        <p>
+          Formation à l’administration réseau,
+          systèmes, cybersécurité et infrastructures IT.
+        </p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2026 - 2027</div>
         <h3>Licence Chef de Projet</h3>
-        <p>Spécialisation sécurité, exploitation et développement</p>
-        <p>Cette licence me permettra de développer des compétences en gestion de projet et coordination d’équipe.</p>
+        <p>Sécurité, exploitation et développement</p>
+        <p>
+          Objectif : développer des compétences
+          en gestion de projet informatique.
+        </p>
       </div>
 
       <div class="timeline-item">
         <div class="year">2027 - 2029</div>
         <h3>Master MIAGE</h3>
         <p>Management des systèmes d’information</p>
-        <p>Mon objectif est d’évoluer vers des postes à responsabilité dans les systèmes d’information.</p>
+        <p>
+          Évolution vers des postes à responsabilité
+          dans les systèmes d’information.
+        </p>
       </div>
+
     </div>
+
   </section>
 
+  <!-- CERTIFICATIONS -->
   <section class="slide" id="certifications">
+
     <h2>Certifications obtenues</h2>
 
     <div class="grid">
+
       <a class="cert-card" href="#ccna1">
         <div class="cert-icon">🌐</div>
         <span class="tag">Réseau</span>
         <h3>CCNA 1</h3>
-        <p>Fondamentaux réseau, modèles OSI/TCP-IP, adressage IPv4 et communication réseau.</p>
+        <p>Fondamentaux réseau et communication IP.</p>
       </a>
 
       <a class="cert-card" href="#ccna2">
         <div class="cert-icon">🖧</div>
         <span class="tag">Infrastructure</span>
         <h3>CCNA 2</h3>
-        <p>Routage, VLAN, commutation, dépannage et administration réseau.</p>
+        <p>Routage, VLAN et administration réseau.</p>
       </a>
 
       <a class="cert-card" href="#ccna3">
         <div class="cert-icon">🔐</div>
         <span class="tag">Réseau avancé</span>
         <h3>CCNA 3</h3>
-        <p>Architecture réseau avancée, sécurité et haute disponibilité.</p>
+        <p>Sécurité, architecture et haute disponibilité.</p>
       </a>
 
       <a class="cert-card" href="#linux">
         <div class="cert-icon">🐧</div>
         <span class="tag">Système</span>
         <h3>Linux</h3>
-        <p>Administration Linux, utilisateurs, services et terminal.</p>
+        <p>Administration Linux et gestion système.</p>
       </a>
 
       <a class="cert-card" href="#devops">
         <div class="cert-icon">⚙️</div>
         <span class="tag">DevOps</span>
         <h3>DevOps</h3>
-        <p>Automatisation, intégration continue et déploiement applicatif.</p>
+        <p>Automatisation et intégration continue.</p>
       </a>
 
       <a class="cert-card" href="#cnil">
         <div class="cert-icon">🛡️</div>
         <span class="tag">RGPD</span>
         <h3>CNIL</h3>
-        <p>Protection des données, RGPD et conformité numérique.</p>
+        <p>Protection des données et conformité.</p>
       </a>
+
     </div>
+
   </section>
 
-  <section class="slide" id="ccna1">
-    <a href="#certifications" class="back">← Retour aux certifications</a>
-
-    <div class="detail-box">
-      <h2>CCNA 1</h2>
-      <ul>
-        <li>Découverte des fondamentaux des réseaux informatiques.</li>
-        <li>Compréhension des modèles OSI et TCP/IP.</li>
-        <li>Apprentissage de l’adressage IPv4 et des sous-réseaux.</li>
-        <li>Identification du rôle des équipements réseau.</li>
-        <li>Développement d’une méthodologie de résolution de problèmes réseau.</li>
-        <li>Cette certification m’a permis d’acquérir les bases essentielles des infrastructures réseau.</li>
-      </ul>
-
-      <a class="badge-link" href="CCNA1.pdf" target="_blank">Ouvrir le PDF CCNA 1</a>
-    </div>
-  </section>
-
-  <section class="slide" id="ccna2">
-    <a href="#certifications" class="back">← Retour aux certifications</a>
-
-    <div class="detail-box">
-      <h2>CCNA 2</h2>
-      <ul>
-        <li>Configuration avancée des switchs et routeurs Cisco.</li>
-        <li>Mise en place des VLAN et du routage inter-VLAN.</li>
-        <li>Compréhension des protocoles réseau avancés.</li>
-        <li>Développement des compétences en dépannage réseau.</li>
-        <li>Cette certification m’a permis de mieux comprendre l’administration d’un réseau professionnel.</li>
-      </ul>
-
-      <a class="badge-link" href="CCNA2.pdf" target="_blank">Ouvrir le PDF CCNA 2</a>
-    </div>
-  </section>
-
-  <section class="slide" id="ccna3">
-    <a href="#certifications" class="back">← Retour aux certifications</a>
-
-    <div class="detail-box">
-      <h2>CCNA 3</h2>
-      <ul>
-        <li>Étude des architectures réseau avancées.</li>
-        <li>Approfondissement des notions de cybersécurité.</li>
-        <li>Analyse des performances réseau.</li>
-        <li>Résolution d’incidents complexes.</li>
-        <li>Cette certification m’a permis de développer une vision plus globale des infrastructures IT.</li>
-      </ul>
-
-      <a class="badge-link" href="CCNA3.pdf" target="_blank">Ouvrir le PDF CCNA 3</a>
-    </div>
-  </section>
-
-  <section class="slide" id="linux">
-    <a href="#certifications" class="back">← Retour aux certifications</a>
-
-    <div class="detail-box">
-      <h2>Linux</h2>
-      <ul>
-        <li>Administration d’un système Linux en ligne de commande.</li>
-        <li>Gestion des utilisateurs, groupes et permissions.</li>
-        <li>Manipulation des processus et services système.</li>
-        <li>Compréhension du rôle de Linux dans les serveurs.</li>
-        <li>Cette certification m’a permis de gagner en autonomie dans l’administration système.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="slide" id="devops">
-    <a href="#certifications" class="back">← Retour aux certifications</a>
-
-    <div class="detail-box">
-      <h2>DevOps</h2>
-      <ul>
-        <li>Découverte des principes DevOps.</li>
-        <li>Compréhension de l’intégration continue et du déploiement continu.</li>
-        <li>Initiation à l’automatisation et à l’amélioration continue.</li>
-        <li>Analyse du cycle de vie d’un projet informatique.</li>
-        <li>Cette certification m’a permis d’avoir une vision globale des projets IT modernes.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="slide" id="cnil">
-    <a href="#certifications" class="back">← Retour aux certifications</a>
-
-    <div class="detail-box">
-      <h2>CNIL</h2>
-      <ul>
-        <li>Compréhension des principes du RGPD.</li>
-        <li>Identification des droits des utilisateurs concernant leurs données.</li>
-        <li>Analyse des obligations légales des organisations.</li>
-        <li>Sensibilisation aux risques liés à la cybersécurité.</li>
-        <li>Cette certification m’a permis de comprendre l’importance de la protection des données.</li>
-      </ul>
-
-      <div class="module-links">
-        <a class="badge-link" href="Module 1.pdf" target="_blank">Module 1</a>
-        <a class="badge-link" href="Module 2.pdf" target="_blank">Module 2</a>
-        <a class="badge-link" href="Module 3.pdf" target="_blank">Module 3</a>
-        <a class="badge-link" href="Module 4.pdf" target="_blank">Module 4</a>
-        <a class="badge-link" href="Module 5.pdf" target="_blank">Module 5</a>
-        <a class="badge-link" href="Module 6.pdf" target="_blank">Module 6</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- IMPACT -->
   <section class="slide">
 
     <div class="impact-hero">
       <h2>Pourquoi ces certifications vont m’aider ?</h2>
+
       <p>
-        Ces certifications ne sont pas seulement des documents ajoutés à mon parcours.
-        Elles représentent une progression concrète : comprendre, pratiquer, sécuriser,
-        documenter et savoir expliquer des notions techniques dans un contexte professionnel.
+        Ces certifications représentent une progression concrète :
+        comprendre les infrastructures, administrer des systèmes,
+        intégrer la sécurité et développer une vision professionnelle
+        des projets informatiques.
       </p>
     </div>
 
@@ -608,29 +520,26 @@
         <div class="impact-icon">🎯</div>
         <h3>Un parcours cohérent</h3>
         <p>
-          Les certifications suivent une logique claire : réseau avec CCNA,
-          système avec Linux, méthode projet avec DevOps et conformité avec la CNIL.
-          Elles montrent que mon parcours est construit et réfléchi.
+          Chaque certification complète la précédente :
+          réseau, système, sécurité, conformité et méthode projet.
         </p>
       </div>
 
       <div class="impact-card">
         <div class="impact-icon">🧠</div>
-        <h3>Des bases techniques solides</h3>
+        <h3>Des compétences solides</h3>
         <p>
-          Les certifications CCNA m’ont permis de comprendre les infrastructures :
-          adressage IP, routage, VLAN, commutation, sécurité et dépannage.
-          Ces compétences sont essentielles en SISR.
+          Les certifications CCNA m’ont permis de renforcer
+          mes bases techniques en réseau et infrastructure.
         </p>
       </div>
 
       <div class="impact-card">
         <div class="impact-icon">🛠️</div>
-        <h3>Une capacité à pratiquer</h3>
+        <h3>Une approche pratique</h3>
         <p>
-          Ces certifications m’ont aidée à passer de la théorie à la pratique :
-          configuration, analyse, résolution d’incidents et compréhension
-          des environnements professionnels.
+          Ces certifications m’ont permis de passer
+          de la théorie à des situations concrètes.
         </p>
       </div>
 
@@ -638,19 +547,17 @@
         <div class="impact-icon">🔐</div>
         <h3>Une culture sécurité</h3>
         <p>
-          Avec la CNIL et les notions réseau, j’ai compris l’importance
-          de la confidentialité, de la protection des données,
-          des accès et des bonnes pratiques de cybersécurité.
+          J’ai développé une sensibilisation à la cybersécurité,
+          à la protection des données et au RGPD.
         </p>
       </div>
 
       <div class="impact-card">
         <div class="impact-icon">📈</div>
-        <h3>Une montée en compétences visible</h3>
+        <h3>Une montée en compétences</h3>
         <p>
-          Chaque certification montre une progression. Elles prouvent
-          ma motivation, ma régularité et ma capacité à apprendre
-          en dehors des cours pour renforcer mon profil.
+          Ces certifications montrent ma motivation,
+          mon autonomie et mon implication personnelle.
         </p>
       </div>
 
@@ -658,29 +565,26 @@
         <div class="impact-icon">🤝</div>
         <h3>Un atout pour l’alternance</h3>
         <p>
-          Pour une entreprise, ces certifications montrent que je possède
-          des connaissances concrètes et que je peux m’intégrer plus facilement
-          dans un environnement informatique.
+          Elles renforcent ma crédibilité auprès des entreprises
+          et montrent mon sérieux dans mon parcours.
         </p>
       </div>
 
       <div class="impact-card">
         <div class="impact-icon">📋</div>
-        <h3>Une préparation à la gestion de projet</h3>
+        <h3>Préparation à la gestion de projet</h3>
         <p>
-          Mon objectif est d’intégrer une licence Chef de Projet.
-          Ces certifications m’aident à mieux comprendre les contraintes techniques,
-          les risques, les délais et les besoins des utilisateurs.
+          Elles m’aident à mieux comprendre les contraintes techniques
+          d’un projet informatique.
         </p>
       </div>
 
       <div class="impact-card">
         <div class="impact-icon">🚀</div>
-        <h3>Une vision professionnelle</h3>
+        <h3>Vision professionnelle</h3>
         <p>
-          Elles m’aident à adopter une posture plus professionnelle :
-          analyser une situation, proposer une solution, respecter les règles
-          de sécurité et comprendre l’impact d’un choix technique.
+          Elles me permettent d’adopter une posture plus professionnelle
+          dans l’analyse et la gestion d’un système informatique.
         </p>
       </div>
 
@@ -696,33 +600,19 @@
     </div>
 
     <div class="final-impact">
-      <h3>Ce que je veux montrer au jury</h3>
+
+      <h3>Conclusion</h3>
+
       <p>
-        À travers ce parcours de certification, je veux montrer que je suis investie,
-        curieuse et capable de construire une progression professionnelle cohérente.
-        Ces certifications m’ont permis de renforcer mes compétences techniques,
-        mais aussi de mieux comprendre les enjeux d’un système d’information :
-        disponibilité, sécurité, conformité, organisation et qualité de service.
+        À travers ce parcours de certification,
+        je souhaite montrer une progression cohérente,
+        une implication personnelle importante
+        et une réelle volonté d’évoluer dans les métiers
+        des systèmes, réseaux et de la gestion de projet informatique.
       </p>
+
     </div>
 
-  </section>
-
-  <section class="slide">
-    <h2>Conclusion</h2>
-
-    <p>
-      Ces certifications m’ont permis de renforcer mes compétences techniques
-      et professionnelles tout au long de mon BTS SIO SISR.
-    </p>
-
-    <p>
-      Elles représentent une étape importante dans mon évolution
-      vers les métiers de la gestion de projet
-      et des systèmes d’information.
-    </p>
-
-    <p class="footer">Alyssia Noireau — BTS SIO SISR</p>
   </section>
 
   <script>
